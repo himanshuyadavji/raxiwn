@@ -161,33 +161,113 @@ body {
     border-bottom: 1px solid var(--raxi-line);
 }
 
-.site-header .custom-logo-link img {
-    height: 50px;
-    max-width: 50px;
-    object-fit: contain;
-    width: 50px;
+@media (min-width: 922px) {
+    #ast-desktop-header .site-primary-header-wrap {
+        margin-inline: auto;
+        max-width: 1040px;
+        width: calc(100% - 40px);
+    }
+
+    #ast-desktop-header .custom-logo-link img {
+        height: 100px;
+        max-width: 100px;
+        width: 100px;
+    }
+
+    #ast-desktop-header .ast-builder-grid-row {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        min-height: 72px;
+    }
+
+    #ast-desktop-header .site-header-primary-section-left,
+    #ast-desktop-header .site-header-primary-section-right {
+        align-items: center;
+        display: flex;
+        height: auto;
+        width: auto;
+    }
+
+    #ast-desktop-header .site-header-primary-section-right {
+        flex: 1;
+        justify-content: flex-end;
+        min-width: 0;
+    }
+
+    #ast-desktop-header .ast-main-header-bar-alignment,
+    #ast-desktop-header .main-header-bar-navigation,
+    #ast-desktop-header .main-navigation {
+        width: auto;
+    }
+
+    #ast-hf-menu-1 {
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 2px;
+        height: auto;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 0;
+        width: auto;
+    }
+
+    #ast-hf-menu-1 > .menu-item {
+        display: block;
+        flex: 0 0 auto;
+        height: auto;
+        width: auto;
+    }
+
+    #ast-hf-menu-1 .menu-link {
+        font-size: 14px;
+        height: auto;
+        line-height: 1.35;
+        min-height: 44px;
+        padding: 10px 7px;
+        white-space: nowrap;
+    }
 }
 
-.entry-content img.wp-image-22 {
-    aspect-ratio: 1 !important;
-    height: 76px !important;
+header .custom-logo-link img {
+    aspect-ratio: 1;
+    height: 70px;
+    max-width: 70px;
     object-fit: contain;
-    width: 76px !important;
+    width: 70px;
 }
 
 .site-content > .ast-container {
     padding-bottom: 2.5rem;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-top: 2rem;
 }
 
-.entry-title {
+.site-content > .ast-container {
+    max-width: 1180px;
+}
+
+#primary.content-area {
+    float: none;
+    margin-inline: auto;
+    max-width: 1000px;
+    width: 100%;
+}
+
+header.entry-header .entry-title {
+	font-size: 30px;
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
 .entry-content {
     color: var(--raxi-ink);
-    line-height: 1.75;
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    text-align: center;
 }
 
 .entry-content p {
@@ -206,16 +286,32 @@ body {
 
 .entry-content .wp-block-buttons {
     gap: 0.75rem;
+    justify-content: center;
     margin: 1rem 0;
+}
+
+.entry-content .wp-image-22 {
+    aspect-ratio: 1 !important;
+    height: auto !important;
+    object-fit: contain;
+    width: min(150px, 100%) !important;
 }
 
 .entry-content .wp-block-button__link,
 .ast-custom-button {
+    align-items: center;
     border: 1px solid transparent;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgb(30 35 40 / 12%);
-    font-weight: 650;
-    padding: 0.7rem 1.3rem;
+    box-shadow: 0 2px 5px rgb(30 35 40 / 10%);
+    display: inline-flex;
+    font-weight: 600;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.55rem 1rem;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
 }
 
 .entry-content .wp-block-button__link.has-vivid-red-background-color,
@@ -229,11 +325,29 @@ body {
     color: #fff !important;
 }
 
-.entry-content .wp-block-button__link:hover,
-.entry-content .wp-block-button__link:focus-visible,
+.entry-content .wp-block-button__link.has-vivid-red-background-color:hover,
+.entry-content .wp-block-button__link.has-vivid-red-background-color:focus-visible,
 .ast-custom-button-link:hover .ast-custom-button {
     background-color: var(--raxi-red-hover) !important;
     color: #fff !important;
+}
+
+.entry-content .wp-block-button__link.has-luminous-vivid-amber-background-color:hover,
+.entry-content .wp-block-button__link.has-luminous-vivid-amber-background-color:focus-visible {
+    background-color: #80550c !important;
+    color: #fff !important;
+}
+
+.entry-content .wp-block-button__link:focus-visible,
+.ast-custom-button-link:focus-visible .ast-custom-button {
+    outline: 3px solid rgb(165 43 56 / 28%);
+    outline-offset: 3px;
+}
+
+.entry-content .wp-block-button__link:hover,
+.ast-custom-button-link:hover .ast-custom-button {
+    box-shadow: 0 4px 9px rgb(30 35 40 / 16%);
+    transform: translateY(-1px);
 }
 
 .entry-content .wp-block-rank-math-toc-block {
@@ -247,11 +361,22 @@ body {
 .entry-content .wp-block-table {
     background: #fff;
     border: 1px solid var(--raxi-line);
+    font-size: 15px;
+    line-height: 1.5;
+    margin-inline: auto;
 }
 
 .entry-content .wp-block-table td {
     border-color: var(--raxi-line);
-    padding: 0.7rem 0.85rem;
+    padding: 0.35rem 0.45rem;
+    text-align: center;
+}
+
+.entry-content ul,
+.entry-content ol {
+    list-style-position: inside;
+    padding-inline-start: 0;
+    text-align: center;
 }
 
 .entry-content .guide-image {
@@ -262,16 +387,100 @@ body {
 @media (max-width: 544px) {
     .site-content > .ast-container {
         padding-bottom: 1.5rem;
+        padding-left: 16px;
+        padding-right: 16px;
         padding-top: 1.25rem;
     }
 
     .entry-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+    }
+
+    header.entry-header .entry-title {
+        font-size: 24px;
+    }
+
+    .entry-content {
+        font-size: 16px;
+    }
+
+    .entry-content > .wp-block-buttons .wp-block-button,
+    .entry-content > .wp-block-buttons .wp-block-button__link {
+        width: 100%;
+    }
+
+    .entry-content .wp-block-button__link {
+        min-height: 46px;
     }
 
     .entry-content .wp-block-rank-math-toc-block {
         padding: 1rem;
     }
+
+    .entry-content .wp-block-table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 921px) {
+    #ast-mobile-header .ast-above-header-wrap {
+        display: none;
+    }
+
+    #ast-mobile-header .ast-primary-header-bar .ast-builder-grid-row {
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        min-height: 72px;
+    }
+
+    #ast-mobile-header .site-header-primary-section-left,
+    #ast-mobile-header .site-header-primary-section-right {
+        align-items: center;
+        display: flex;
+        height: auto;
+        width: auto;
+    }
+
+    #ast-mobile-header .site-header-primary-section-right {
+        flex: 0 0 auto;
+        margin-left: auto;
+    }
+
+    #ast-mobile-header .ast-builder-layout-element[data-section="section-header-mobile-trigger"],
+    #ast-mobile-header .ast-button-wrap {
+        width: auto;
+    }
+
+    #ast-mobile-header .menu-toggle {
+        align-items: center;
+        display: flex;
+        height: 48px;
+        justify-content: center;
+        min-width: 48px;
+        padding: 0;
+        width: 48px;
+    }
+
+    #ast-mobile-header .ast-mobile-svg.ast-close-svg {
+        display: none;
+    }
+
+    #ast-mobile-header .menu-toggle[aria-expanded="true"] .ast-mobile-svg.ast-menu-svg {
+        display: none;
+    }
+
+    #ast-mobile-header .menu-toggle[aria-expanded="true"] .ast-mobile-svg.ast-close-svg {
+        display: inline;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.entry-content .wp-block-button__link,
+	.ast-custom-button {
+		transition: none;
+	}
 }
 </style>
 
@@ -282,7 +491,7 @@ body {
 			(function(){var mq=window.matchMedia('(max-width:921.99px)');function apply(isMobile){var b=document.body.classList;if(isMobile){b.add('ast-header-break-point');b.remove('ast-desktop');}else{b.remove('ast-header-break-point');b.add('ast-desktop');}}apply(mq.matches);if(mq.addEventListener){mq.addEventListener('change',function(e){apply(e.matches);});}else if(mq.addListener){mq.addListener(function(e){apply(e.matches);});}})();
 			</script>
 			
-<a class="skip-link screen-reader-text" href="https://raxiwingame.online/#content">
+<a class="skip-link screen-reader-text" href="#content">
 		Skip to content</a>
 
 <div class="hfeed site" id="page">
@@ -295,13 +504,13 @@ body {
 											<div class="site-header-primary-section-left site-header-section ast-flex site-header-section-left">
 									<div class="ast-builder-layout-element ast-flex site-header-focus-item" data-section="title_tagline">
 							<div class="site-branding ast-site-identity" itemtype="https://schema.org/Organization" itemscope="itemscope">
-					<span class="site-logo-img"><a href="https://raxiwingame.online/" class="custom-logo-link" rel="home" aria-current="page"><img width="50" height="50" src="logo.png" class="custom-logo" alt="Raxi Win" decoding="async"></a></span>				</div>
+					<span class="site-logo-img"><a href="#page" class="custom-logo-link" rel="home" aria-current="page"><img width="50" height="50" src="logo.png" class="custom-logo" alt="Raxi Win" decoding="async"></a></span>				</div>
 			<!-- .site-branding -->
 					</div>
 								</div>
 																								<div class="site-header-primary-section-right site-header-section ast-flex ast-grid-right-section">
 										<div class="ast-builder-menu-1 ast-builder-menu ast-flex ast-builder-menu-1-focus-item ast-builder-layout-element site-header-focus-item" data-section="section-hb-menu-1">
-			<div class="ast-main-header-bar-alignment"><div class="main-header-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item" id="primary-site-navigation-desktop" aria-label="Primary Site Navigation" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="main-navigation ast-inline-flex"><ul id="ast-hf-menu-1" class="main-header-menu ast-menu-shadow ast-nav-menu ast-flex  submenu-with-border stack-on-mobile"><li id="menu-item-138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-10 current_page_item menu-item-138"><a href="https://raxiwingame.online/" aria-current="page" class="menu-link">RaxiWin Game Login</a></li>
+			<div class="ast-main-header-bar-alignment"><div class="main-header-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item" id="primary-site-navigation-desktop" aria-label="Primary Site Navigation" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="main-navigation ast-inline-flex"><ul id="ast-hf-menu-1" class="main-header-menu ast-menu-shadow ast-nav-menu ast-flex  submenu-with-border stack-on-mobile"><li id="menu-item-138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-10 current_page_item menu-item-138"><a href="#page" aria-current="page" class="menu-link">RaxiWin Game Login</a></li>
 <li id="menu-item-139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-139"><a rel="privacy-policy" href="https://raxiwingame.online/privacy-policy/" class="menu-link">Privacy Policy</a></li>
 <li id="menu-item-140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140"><a href="https://raxiwingame.online/affiliate-disclosure-raxiwin/" class="menu-link">Affiliate Disclosure- Raxiwin</a></li>
 <li id="menu-item-141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-141"><a href="https://raxiwingame.online/about-raxiwin/" class="menu-link">About RaxiWin</a></li>
@@ -320,13 +529,13 @@ body {
 									<div class="ast-builder-grid-row ast-grid-center-col-layout-only ast-flex ast-grid-center-col-layout">
 																			<div class="site-header-above-section-center site-header-section ast-flex ast-grid-section-center">
 										<div class="ast-builder-layout-element ast-flex site-header-focus-item ast-header-button-1" data-section="section-hb-button-1">
-			<div class="ast-builder-button-wrap ast-builder-button-size-default"><a class="ast-custom-button-link" href="https://raxiwingame.online/raxi-win-login/" target="_self" role="button" aria-label="LOGIN ">
+            <div class="ast-builder-button-wrap ast-builder-button-size-default"><a class="ast-custom-button-link" href="https://raxiwingame.online/raxi-win-login/" target="_self" role="button" aria-label="LOGIN ">
 			<div class="ast-custom-button">LOGIN </div>
-		</a><a class="menu-link" href="https://raxiwingame.online/raxi-win-login/" target="_self">LOGIN </a></div>		</div>
+        </a><a class="menu-link" href="https://raxiwingame.online/raxi-win-login/" target="_self">LOGIN </a></div>		</div>
 						<div class="ast-builder-layout-element site-header-focus-item ast-header-button-2" data-section="section-hb-button-2">
-					<div class="ast-builder-button-wrap ast-builder-button-size-default"><a class="ast-custom-button-link" href="https://raxiwingame.online/raxi-win-login/" target="_self" role="button" aria-label="REGISTER">
+                    <div class="ast-builder-button-wrap ast-builder-button-size-default"><a class="ast-custom-button-link" href="https://raxiwingame.online/raxi-win-login/" target="_self" role="button" aria-label="REGISTER">
 			<div class="ast-custom-button">REGISTER</div>
-		</a><a class="menu-link" href="https://raxiwingame.online/raxi-win-login/" target="_self">REGISTER</a></div>				</div>
+                </a><a class="menu-link" href="https://raxiwingame.online/raxi-win-login/" target="_self">REGISTER</a></div>				</div>
 											</div>
 																	</div>
 						</div>
@@ -337,14 +546,14 @@ body {
 													<div class="site-header-primary-section-left site-header-section ast-flex site-header-section-left">
 										<div class="ast-builder-layout-element ast-flex site-header-focus-item" data-section="title_tagline">
 							<div class="site-branding ast-site-identity" itemtype="https://schema.org/Organization" itemscope="itemscope">
-					<span class="site-logo-img"><a href="https://raxiwingame.online/" class="custom-logo-link" rel="home" aria-current="page"><img width="50" height="50" src="logo.png" class="custom-logo" alt="Raxi Win" decoding="async"></a></span>				</div>
+					<span class="site-logo-img"><a href="#page" class="custom-logo-link" rel="home" aria-current="page"><img width="50" height="50" src="logo.png" class="custom-logo" alt="Raxi Win" decoding="async"></a></span>				</div>
 			<!-- .site-branding -->
 					</div>
 									</div>
 																									<div class="site-header-primary-section-right site-header-section ast-flex ast-grid-right-section">
 										<div class="ast-builder-layout-element ast-flex site-header-focus-item" data-section="section-header-mobile-trigger">
 						<div class="ast-button-wrap">
-				<button type="button" class="menu-toggle main-header-menu-toggle ast-mobile-menu-trigger-minimal" aria-expanded="false" aria-label="Main menu toggle">
+                <button type="button" class="menu-toggle main-header-menu-toggle ast-mobile-menu-trigger-minimal" aria-expanded="false" aria-controls="ast-mobile-header-content" aria-label="Main menu toggle">
 					<span class="mobile-menu-toggle-icon">
 						<span aria-hidden="true" class="ahfb-svg-iconset ast-inline-flex svg-baseline"><svg class="ast-mobile-svg ast-menu-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 13h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 7h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 19h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1z"></path></svg></span><span aria-hidden="true" class="ahfb-svg-iconset ast-inline-flex svg-baseline"><svg class="ast-mobile-svg ast-close-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5.293 6.707l5.293 5.293-5.293 5.293c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l5.293-5.293 5.293 5.293c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414l-5.293-5.293 5.293-5.293c0.391-0.391 0.391-1.024 0-1.414s-1.024-0.391-1.414 0l-5.293 5.293-5.293-5.293c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414z"></path></svg></span>					</span>
 									</button>
@@ -354,9 +563,9 @@ body {
 											</div>
 						</div>
 	</div>
-				<div class="ast-mobile-header-content content-align-flex-start ">
+                <div id="ast-mobile-header-content" class="ast-mobile-header-content content-align-flex-start ">
 						<div class="ast-builder-menu-mobile ast-builder-menu ast-builder-menu-mobile-focus-item ast-builder-layout-element site-header-focus-item" data-section="section-header-mobile-menu">
-			<div class="ast-main-header-bar-alignment"><div class="main-header-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item" id="ast-mobile-site-navigation" aria-label="Site Navigation: top" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="main-navigation"><ul id="ast-hf-mobile-menu" class="main-header-menu ast-nav-menu ast-flex  submenu-with-border astra-menu-animation-fade  stack-on-mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-10 current_page_item menu-item-138"><a href="https://raxiwingame.online/" aria-current="page" class="menu-link">RaxiWin Game Login</a></li>
+			<div class="ast-main-header-bar-alignment"><div class="main-header-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item" id="ast-mobile-site-navigation" aria-label="Site Navigation: top" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="main-navigation"><ul id="ast-hf-mobile-menu" class="main-header-menu ast-nav-menu ast-flex  submenu-with-border astra-menu-animation-fade  stack-on-mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-10 current_page_item menu-item-138"><a href="#page" aria-current="page" class="menu-link">RaxiWin Game Login</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-139"><a rel="privacy-policy" href="https://raxiwingame.online/privacy-policy/" class="menu-link">Privacy Policy</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140"><a href="https://raxiwingame.online/affiliate-disclosure-raxiwin/" class="menu-link">Affiliate Disclosure- Raxiwin</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-141"><a href="https://raxiwingame.online/about-raxiwin/" class="menu-link">About RaxiWin</a></li>
@@ -388,7 +597,7 @@ body {
 
 
 <div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-3e41869c wp-block-buttons-is-layout-flex">
-<div class="wp-block-button"><a class="wp-block-button__link has-vivid-red-background-color has-background wp-element-button" href="https://raxiwingame.online/raxi-win-login/"><strong>RaxiWin Game</strong></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-vivid-red-background-color has-background wp-element-button" href="https://raxiwingame.online/raxi-win-login/"><strong>RaxiWin Login</strong></a></div>
 </div>
 
 
@@ -403,23 +612,23 @@ body {
 
 
 
-<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td>App Name </td><td><strong><a href="https://raxiwingame.online/" data-type="link" data-id="https://raxiwingame.online/">Raxi Win</a></strong></td></tr><tr><td>Specification</td><td>Designed for Gamers </td></tr><tr><td>Usability </td><td>Ultra smooth interface &amp; Lag free</td></tr><tr><td>Features </td><td>More than 5000+ online Games </td></tr><tr><td>App Size</td><td>10.06 Mb</td></tr></tbody></table></figure>
+<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td>App Name </td><td><strong><a href="#page" data-type="link" data-id="https://raxiwingame.online/">Raxi Win</a></strong></td></tr><tr><td>Specification</td><td>Designed for Gamers </td></tr><tr><td>Usability </td><td>Ultra smooth interface &amp; Lag free</td></tr><tr><td>Features </td><td>More than 5000+ online Games </td></tr><tr><td>App Size</td><td>10.06 Mb</td></tr></tbody></table></figure>
 
 
 
-<p class="wp-block-paragraph"><strong><a href="https://raxiwingame.online/" data-type="link" data-id="https://raxiwingame.online/">RaxiWin</a></strong> is the one of the recently launched top gaming platform, this platform designed for the players who used to play online famous games like Wingo, TRX,K3 ,moto racing etc . this games brings lots of fun and excitement for its user where they can play their loved games without facing any issues. <strong><a href="https://raxiwingame.online/raxi-win-login/" data-type="link" data-id="https://raxiwingame.online/raxi-win-login/">Raxi Win Game </a></strong>provides the secured environment and smooth interface which is loved by the uers.</p>
+<p class="wp-block-paragraph"><strong><a href="#page" data-type="link" data-id="https://raxiwingame.online/">RaxiWin</a></strong> is the one of the recently launched top gaming platform, this platform designed for the players who used to play online famous games like Wingo, TRX,K3 ,moto racing etc . this games brings lots of fun and excitement for its user where they can play their loved games without facing any issues. <strong><a href="#how-to-login-to-raxi-win" data-type="link" data-id="https://raxiwingame.online/raxi-win-login/">Raxi Win Game </a></strong>provides the secured environment and smooth interface which is loved by the uers.</p>
 
 
 
-<p class="wp-block-paragraph">Discover your favourite games here in raxiwin and get the chance to secure your rewards , we provides daily free giftcodes for our beloved and loyal users to maintain the game fair . <strong><a href="https://raxiwingame.online/" data-type="link" data-id="https://raxiwingame.online/">Raxi Win</a></strong> have lots of features to get rewards , one of the most famous feature is our referral program . Other programs are like daily check in bonus , daily task reward and many more .</p>
+<p class="wp-block-paragraph">Discover your favourite games here in raxiwin and get the chance to secure your rewards , we provides daily free giftcodes for our beloved and loyal users to maintain the game fair . <strong><a href="#page" data-type="link" data-id="https://raxiwingame.online/">Raxi Win</a></strong> have lots of features to get rewards , one of the most famous feature is our referral program . Other programs are like daily check in bonus , daily task reward and many more .</p>
 
 
 
-<p class="wp-block-paragraph">you’ll learn everything about&nbsp;Raxiwin login process , including step-by-step&nbsp;<strong>registration</strong>,&nbsp;<strong>app&nbsp;download&nbsp;</strong>process, key features, and how the&nbsp;<a href="https://raxiwingame.online/"><strong>Raxiwin Game platform works</strong>.</a></p>
+<p class="wp-block-paragraph">you’ll learn everything about&nbsp;Raxiwin login process , including step-by-step&nbsp;<strong>registration</strong>,&nbsp;<strong>app&nbsp;download&nbsp;</strong>process, key features, and how the&nbsp;<a href="#page"><strong>Raxiwin Game platform works</strong>.</a></p>
 
 
 
-<div class="wp-block-rank-math-toc-block" id="rank-math-toc"><h2>Table of Contents</h2><nav><ol><li><a href="https://raxiwingame.online/#raxi-win-login-app-registration-games-features">RaxiWin Login – App, Registration &amp; Games Features</a><ol><li><a href="https://raxiwingame.online/#raxi-win-login">RaxiWin Login</a></li><li><a href="https://raxiwingame.online/#how-to-login-to-raxi-win">How to Login to RaxiWin</a></li><li><a href="https://raxiwingame.online/#raxi-win-login-problems">RaxiWin Login Problems</a></li><li><a href="https://raxiwingame.online/#raxi-win-app">RaxiWin App</a></li><li><a href="https://raxiwingame.online/#raxi-win-app-download-apk">RaxiWin App Download &amp; APK</a></li><li><a href="https://raxiwingame.online/#raxi-win-registration">RaxiWin Registration</a></li><li><a href="https://raxiwingame.online/#raxi-win-games">RaxiWin Games</a></li><li><a href="https://raxiwingame.online/#raxi-win-deposit">RaxiWin Deposit</a></li><li><a href="https://raxiwingame.online/#raxi-win-withdrawal-and-troubleshooting">RaxiWin Withdrawal And Troubleshooting</a></li><li><a href="https://raxiwingame.online/#raxi-win-bonus-gift-codes-promotions">RaxiWin Bonus, Gift Codes &amp; Promotions</a></li><li><a href="https://raxiwingame.online/#about-raxi-win-account-security-and-responsible-gaming">About RaxiWin Account Security And Responsible Gaming</a></li><li><a href="https://raxiwingame.online/#frequently-asked-questions">Frequently Asked Questions</a></li></ol></li></ol></nav></div>
+<div class="wp-block-rank-math-toc-block" id="rank-math-toc"><h2>Table of Contents</h2><nav><ol><li><a href="#raxi-win-login-app-registration-games-features">RaxiWin Login – App, Registration &amp; Games Features</a><ol><li><a href="#raxi-win-login">RaxiWin Login</a></li><li><a href="#how-to-login-to-raxi-win">How to Login to RaxiWin</a></li><li><a href="#raxi-win-login-problems">RaxiWin Login Problems</a></li><li><a href="#raxi-win-app">RaxiWin App</a></li><li><a href="#raxi-win-app-download-apk">RaxiWin App Download &amp; APK</a></li><li><a href="#raxi-win-registration">RaxiWin Registration</a></li><li><a href="#raxi-win-games">RaxiWin Games</a></li><li><a href="#raxi-win-deposit">RaxiWin Deposit</a></li><li><a href="#raxi-win-withdrawal-and-troubleshooting">RaxiWin Withdrawal And Troubleshooting</a></li><li><a href="#raxi-win-bonus-gift-codes-promotions">RaxiWin Bonus, Gift Codes &amp; Promotions</a></li><li><a href="#about-raxi-win-account-security-and-responsible-gaming">About RaxiWin Account Security And Responsible Gaming</a></li><li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li></ol></li></ol></nav></div>
 
 
 
@@ -427,7 +636,7 @@ body {
 
 
 
-<p class="wp-block-paragraph">Looking for <strong><a href="https://raxiwingame.online/raxi-win-login/" data-type="page" data-id="59">RaxiWin Login</a></strong> information? Find details about account access, the RaxiWin App, registration, games, deposits, withdrawals, account security, and common login problems.</p>
+<p class="wp-block-paragraph">Looking for <strong><a href="#how-to-login-to-raxi-win" data-type="page" data-id="59">RaxiWin Login</a></strong> information? Find details about account access, the RaxiWin App, registration, games, deposits, withdrawals, account security, and common login problems.</p>
 
 
 
@@ -435,7 +644,7 @@ body {
 
 
 
-<p class="wp-block-paragraph">The <strong><a href="https://raxiwingame.online/raxi-win-login/" data-type="page" data-id="59">RaxiWin Login</a></strong> option allows registered users to access their account and available platform features. Users can generally sign in using the account details associated with their RaxiWin account.</p>
+<p class="wp-block-paragraph">The <strong><a href="#how-to-login-to-raxi-win" data-type="page" data-id="59">RaxiWin Login</a></strong> option allows registered users to access their account and available platform features. Users can generally sign in using the account details associated with their RaxiWin account.</p>
 
 
 
@@ -462,7 +671,6 @@ body {
   <div class="guide-section">
     <h3>📱 Login with Phone Number</h3>
 
-    <img decoding="async" src="./RaxiWin Game Login & Account Guide | Raxi Win_files/Screenshot-2026-10-01-013050.png" alt="RaxiWin Phone Number Login Screen" class="guide-image" loading="lazy">
 
     <div class="guide-step">
       <span class="step-num">1</span>
@@ -499,7 +707,6 @@ body {
   <div class="guide-section">
     <h3>✉️ Login with Email</h3>
 
-    <img decoding="async" src="./RaxiWin Game Login & Account Guide | Raxi Win_files/Screenshot-2026-10-01-013026.png" alt="RaxiWin Email Login Screen" class="guide-image" loading="lazy">
 
     <div class="guide-step">
       <span class="step-num">1</span>
@@ -972,7 +1179,7 @@ body {
 
 
 
-<p class="wp-block-paragraph">Users searching for<a href="https://raxiwingame.online/" data-type="page" data-id="10"> <strong>RaxiWin App Download</strong></a>, <strong>RaxiWin APK</strong>, or <strong><a href="https://raxiwingame.online/" data-type="page" data-id="10">RaxiWin Game Download</a></strong> should verify the source of any application before installing it.</p>
+<p class="wp-block-paragraph">Users searching for<a href="#page" data-type="page" data-id="10"> <strong>RaxiWin App Download</strong></a>, <strong>RaxiWin APK</strong>, or <strong><a href="#page" data-type="page" data-id="10">RaxiWin Game Download</a></strong> should verify the source of any application before installing it.</p>
 
 
 
@@ -1018,7 +1225,7 @@ body {
 
 
 
-<p class="wp-block-paragraph">New users may need to complete <strong><a href="https://raxiwingame.online/" data-type="page" data-id="10">RaxiWin Registration</a></strong> before accessing account features.</p>
+<p class="wp-block-paragraph">New users may need to complete <strong><a href="#page" data-type="page" data-id="10">RaxiWin Registration</a></strong> before accessing account features.</p>
 
 
 
@@ -1855,7 +2062,7 @@ body {
         </summary>
         <div class="raxi-faq-answer">
             <p>
-                <strong><a href="https://raxiwingame.online/" target="_blank" rel="noopener noreferrer">RaxiWin</a></strong>
+                <strong><a href="#page" target="_blank" rel="noopener noreferrer">RaxiWin</a></strong>
                 is described as an online gaming platform offering
                 games such as Wingo, TRX, K3, moto racing, and other
                 gaming categories. Login generally refers to
@@ -2018,10 +2225,10 @@ body {
 									</div>
 											<div class="site-footer-primary-section-2 site-footer-section site-footer-section-2">
 								<div class="footer-widget-area widget-area site-footer-focus-item" data-section="section-footer-menu">
-				<div class="footer-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility footer-navigation" id="footer-site-navigation" aria-label="Site Navigation: ASDF" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="footer-nav-wrap"><ul id="astra-footer-menu" class="ast-nav-menu ast-flex astra-footer-horizontal-menu astra-footer-tablet-vertical-menu astra-footer-mobile-vertical-menu"><li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-10 current_page_item menu-item-34"><a href="https://raxiwingame.online/" aria-current="page" class="menu-link">RaxiWin Game Login</a></li>
+				<div class="footer-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility footer-navigation" id="footer-site-navigation" aria-label="Site Navigation: ASDF" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="footer-nav-wrap"><ul id="astra-footer-menu" class="ast-nav-menu ast-flex astra-footer-horizontal-menu astra-footer-tablet-vertical-menu astra-footer-mobile-vertical-menu"><li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-10 current_page_item menu-item-34"><a href="#page" aria-current="page" class="menu-link">RaxiWin Game Login</a></li>
 <li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-37"><a rel="privacy-policy" href="https://raxiwingame.online/privacy-policy/" class="menu-link">Privacy Policy</a></li>
 <li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="https://raxiwingame.online/contact-us/" class="menu-link">contact us</a></li>
-<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://raxiwingame.online/raxi-win-login/" class="menu-link">Raxiwin Login</a></li>
+<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="#how-to-login-to-raxi-win" class="menu-link">Raxiwin Login</a></li>
 <li id="menu-item-124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-124"><a href="https://raxiwingame.online/disclaimer-raxiwin/" class="menu-link">Disclaimer Raxiwin</a></li>
 <li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="https://raxiwingame.online/affiliate-disclosure-raxiwin/" class="menu-link">Affiliate Disclosure- Raxiwin</a></li>
 <li id="menu-item-132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132"><a href="https://raxiwingame.online/about-raxiwin/" class="menu-link">About RaxiWin</a></li>
@@ -2077,5 +2284,29 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 //# sourceURL=https://raxiwingame.online/wp-includes/js/wp-emoji-loader.min.js
 </script>
 	
+    <script id="raxiwin-mobile-menu">
+    (() => {
+        const toggle = document.querySelector(".menu-toggle");
+        const menu = document.querySelector("#ast-mobile-header-content");
+        if (!toggle || !menu) return;
+
+        const setOpen = (open) => {
+            toggle.setAttribute("aria-expanded", String(open));
+            menu.setAttribute("aria-hidden", String(!open));
+            menu.style.display = open ? "block" : "none";
+        };
+
+        setOpen(false);
+        toggle.addEventListener("click", () => {
+            setOpen(toggle.getAttribute("aria-expanded") !== "true");
+        });
+        menu.addEventListener("click", (event) => {
+            if (event.target instanceof Element && event.target.closest("a")) setOpen(false);
+        });
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") setOpen(false);
+        });
+    })();
+    </script>
 
 </body></html>
