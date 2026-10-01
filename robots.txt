@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://raxiwingame.online/sitemap.xml
+Sitemap: https://www.raxiwingame.online/sitemap.xml
